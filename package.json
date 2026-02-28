@@ -1,6 +1,6 @@
 {
   "name": "streammark",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Beautiful terminal markdown renderer with first-class streaming support",
   "type": "module",
   "main": "src/index.js",

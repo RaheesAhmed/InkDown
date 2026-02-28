@@ -51,14 +51,6 @@ for await (const chunk of stream) {
 md.end();
 ```
 
-### Use with OpenAgent
-
-```js
-import { MarkdownStream } from 'streammark';
-
-agent.on('token', (token) => md.write(token));
-agent.on('done',  ()      => md.end());
-```
 
 ## Themes
 
