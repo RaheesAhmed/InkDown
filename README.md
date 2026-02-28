@@ -1,4 +1,4 @@
-# inkdown
+# StreamMark
 
 Beautiful terminal markdown renderer with first-class streaming support.
 
@@ -7,7 +7,7 @@ Built for LLM/agent output — renders tokens as they arrive without ever showin
 ## Install
 
 ```bash
-npm install inkdown
+npm install streammark
 ```
 
 > **Peer deps:** `chalk@^5`, `string-width@^7`
@@ -17,20 +17,20 @@ npm install inkdown
 ### One-shot render
 
 ```js
-import { render, print } from 'inkdown';
+import { render, print } from 'streammark';
 
 // Get ANSI string back
-const ansi = render('# Hello\n\nThis is **inkdown**', { theme: 'dracula' });
+const ansi = render('# Hello\n\nThis is **streammark**', { theme: 'dracula' });
 console.log(ansi);
 
 // Or print directly
-print('# Hello\n\nThis is **inkdown**', { theme: 'nord' });
+print('# Hello\n\nThis is **streammark**', { theme: 'nord' });
 ```
 
 ### Streaming (LLM/agent output)
 
 ```js
-import { MarkdownStream } from 'inkdown';
+import { MarkdownStream } from 'streammark';
 
 const md = new MarkdownStream({ theme: 'dark' });
 
@@ -54,7 +54,7 @@ md.end();
 ### Use with OpenAgent
 
 ```js
-import { MarkdownStream } from 'inkdown';
+import { MarkdownStream } from 'streammark';
 
 agent.on('token', (token) => md.write(token));
 agent.on('done',  ()      => md.end());
@@ -74,7 +74,7 @@ agent.on('done',  ()      => md.end());
 new MarkdownStream({ theme: 'dracula' });
 
 // Or bring your own theme object
-import { themes } from 'inkdown';
+import { themes } from 'streammark';
 const myTheme = { ...themes.dark, h1: { color: '#FF0000', bold: true } };
 new MarkdownStream({ theme: myTheme });
 ```
